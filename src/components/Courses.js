@@ -3,7 +3,7 @@ import HTML from './courses/HTML';
 import CSS from './courses/CSS';
 import JavaScript from './courses/JavaScript';
 
-import { Route, NavLink } from 'react-router-dom';
+import { Route, NavLink, Redirect } from 'react-router-dom';
 
 const Courses = () => (
   <div className="main-content courses">
@@ -17,6 +17,8 @@ const Courses = () => (
     </div>
     
     {/* Write routes here... */}
+  
+  <Route exact path="/courses" render={ () => <Redirect to="/courses/html" /> } />
   <Route path="/courses/html" component={HTML} />
   <Route path="/courses/css" component={CSS} />
   <Route path="/courses/javascript" component={JavaScript} />
